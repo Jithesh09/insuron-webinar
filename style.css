@@ -285,3 +285,98 @@
       .sub{font-size:16px}
       .cardAbout1, .cardAbout2{grid-column:span 12 !important}
     }
+
+    /* speaker section */
+
+    .speaker-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.speaker-card {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.speaker-image img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.speaker-content h2 {
+  color: #ffc107;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.speaker-content ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.speaker-content ul li {
+  position: relative;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.speaker-content ul li::before {
+  content: "◆";
+  color: #ffc107;
+  position: absolute;
+  left: -20px;
+  font-size: 0.9rem;
+  top: 2px;
+}
+
+@media (max-width: 768px) {
+  .speaker-card {
+    padding: 30px 20px;
+  }
+
+  .speaker-image img {
+    width: 180px;
+  }
+
+  .speaker-content ul {
+    padding-left: 20px;
+  }
+}
+
+/* End of speaker section */
+
+/* logo */
+
+.site-header {
+    display: flex;
+    justify-content: center;
+    margin-top: -4rem;
+}
+
+.site-logo {
+  width: 160px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    width: 120px;
+  }
+}
+
+/* end of logo */
