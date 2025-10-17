@@ -23,7 +23,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     };
 
     try {
-      const response = await fetch("https://your-api-endpoint.com/form", {
+      const response = await fetch("https://insuron.in/webinar.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
