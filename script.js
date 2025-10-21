@@ -23,26 +23,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     };
 
     try {
-      const response = await fetch("https://insuron.in/webinar.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  const response = await fetch("https://insuron.in/webinar.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
 
-      const result = await response.json();
-      alert("Form submitted successfully!");
-      console.log("Server Response:", result);
-      form.reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Something went wrong. Please try again.");
-    }
+  const text = await response.text();
+  console.log("Server Response:", text);
+
+  alert("Form submitted successfully!");
+  form.reset();
+} catch (error) {
+  console.error("Error submitting form:", error);
+  alert("Something went wrong. Please try again.");
+}
   });
 
     
