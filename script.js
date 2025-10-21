@@ -22,6 +22,40 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       portfolio: form.portfolio.value,
     };
 
+    // 🔍 Validation
+  if (!formData.name) {
+    alert("Please enter your name");
+    return;
+  }
+
+  // simple phone check (10 digits)
+  if (!/^\d{10}$/.test(formData.phone)) {
+    alert("Please enter a valid 10-digit phone number");
+    return;
+  }
+
+  // simple email validation
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    alert("Please enter a valid email address");
+    return;
+  }
+
+  if (!formData.car) {
+    alert("Please enter your car name or model");
+    return;
+  }
+
+  if (!formData.city) {
+    alert("Please enter your city");
+    return;
+  }
+
+  // Optional: portfolio validation
+  if (!formData.portfolio) {
+    alert("Please select a portfolio option");
+    return;
+  }
+
     try {
   const response = await fetch("https://insuron.in/webinar.php", {
     method: "POST",
@@ -38,13 +72,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const text = await response.text();
   console.log("Server Response:", text);
 
-  alert("Form submitted successfully!");
-  form.reset();
+  if (text.toLowerCase().includes("already")) {
+      alert("This email has already been registered!");
+    } else {
+      alert("Form submitted successfully!");
+      form.reset();
+    }
 } catch (error) {
   console.error("Error submitting form:", error);
   alert("Something went wrong. Please try again.");
 }
   });
+
+
+  
 
     
 
